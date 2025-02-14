@@ -1,0 +1,51 @@
+type: custom:button-card
+entity: sensor.next_collection
+show_icon: false
+show_label: true
+
+styles:
+  grid:
+    - grid-template-areas: '"n l" "n type"'
+    - grid-template-columns: 40% 1fr
+    - grid-template-rows: 30% 1fr
+  card:
+    - margin: 0
+    - background: 
+  name:
+    - font-size: 70px
+    - font-weight: 500
+    - justify-self: center
+    - align-self: center
+  label:
+    - justify-self: start
+    - font-size: 22px
+    - font-weight: 500
+    - text-align: left
+  custom_fields:
+    type:
+      - font-size: 14px
+      - font-weight: 500
+      - justify-self: start
+      - padding-top: 20px
+
+name: |
+  [[[ return entity.state.split(',')[0] ]]]
+label: |
+  [[[ 
+    const days = entity.state.split(',')[0];
+    if (days == undefined || days === null || isNaN(days)){
+      return 'UnKnown time until <br>collection';
+    } else if (days === '0') {
+      return 'Collection today';
+    } else if (days == '1') {
+      return 'Day until <br>collection'
+    } else {
+      return 'Days until <br>collection'
+    }
+      
+  ]]]
+custom_fields:
+  type: |
+    [[[ return entity.state.split(',')[1] ]]]
+    
+    
