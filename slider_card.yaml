@@ -1,0 +1,58 @@
+type: vertical-stack
+cards:
+  - type: custom:button-card
+    entity: light.lamp
+    name: buro
+    icon: mdi:ceiling-light
+    tap_action:
+      action: none
+    styles:
+      container:
+        - border-radius: 30px
+      grid:
+        - grid-template-columns: 68px 1fr
+        - grid-template-areas: "\"i n\""
+      card:
+        - border-radius: 30px
+        - margin-top: 7px
+        - background: none
+        - height: 65px
+        - position: absolute
+        - z-index: 1
+      img_cell:
+        - width: 22px
+      icon:
+        - width: 22px
+        - color: "#ffffff"
+      name:
+        - justify-self: start
+        - font-size: 16px
+        - font-weight: 400
+        - color: "#ffffff"
+  - type: custom:my-slider-v2
+    entity: light.lamp
+    allowTapping: false
+    allowSliding: true
+    styles:
+      container:
+        - border-radius: 30px
+      card:
+        - margin-top: 0px
+        - height: 65px
+        - border-radius: 30px
+        - background: none
+      progress:
+        - background: >-
+            linear-gradient(145deg, rgba(255,176,233,0.05) 0%,
+            rgba(255,220,178,1) 100%)
+      thumb:
+        - width: 3px
+        - height: 50%
+        - background: "#ffffff"
+        - border-radius: 5px
+        - top: 26%
+        - margin-right: 12px
+      track:
+        - background: >-
+            linear-gradient(145deg, rgba(255,176,233,0.15) 0%, rgba(50,50,52,1)
+            50%)
